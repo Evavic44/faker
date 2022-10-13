@@ -1,4 +1,3 @@
-import type { Mersenne } from 'src/internal/mersenne/mersenne';
 import type { Faker } from '../..';
 import { FakerError } from '../../errors/faker-error';
 
@@ -55,7 +54,7 @@ export class DatatypeModule {
       throw new FakerError(`Max ${max} should be greater than min ${min}.`);
     }
 
-    const mersenne: Mersenne =
+    const mersenne =
       // @ts-expect-error: access private member field
       this.faker._mersenne;
 
