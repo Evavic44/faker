@@ -4,7 +4,6 @@
     "before:init": ["pnpm run clean", "pnpm install", "npm run build"]
   },
   "git": {
-    "changelog": "git log --pretty=format:\"* %s (%h)\" ${from}...${to}",
     "commit": true,
     "commitMessage": "chore(release): ${version}",
     "tag": true,
