@@ -1,16 +1,19 @@
 {
   "verbose": 2,
   "hooks": {
-    "before:npm:release": ["pnpm run clean", "pnpm install", "npm run build"]
+    "before:init": ["pnpm run clean", "pnpm install", "pnpm run build"],
+    "after:init": ["pnpm run lint", "pnpm test"]
   },
   "git": {
+    "changelog": "git log --pretty=format:\"* %s (%h)\" ${from}...${to}",
     "commit": true,
     "commitMessage": "chore(release): ${version}",
     "tag": true,
     "push": true
   },
   "npm": {
-    "publish": true
+    "publish": true,
+    "allowSameVersion": false
   },
   "github": {
     "release": true,
@@ -29,8 +32,7 @@
         {
           "type": "fix",
           "section": "Bug Fixes"
-        },
-        {}
+        }
       ]
     }
   }
