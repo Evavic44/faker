@@ -1,8 +1,13 @@
 {
   "verbose": 2,
   "hooks": {
-    "before:init": ["pnpm run clean", "pnpm install", "pnpm run build"],
-    "after:init": ["pnpm run lint", "pnpm test"]
+    "before:init": [
+      "pnpm run clean",
+      "pnpm install",
+      "pnpm run lint",
+      "pnpm run build",
+      "pnpm run test run"
+    ]
   },
   "git": {
     "changelog": "git log --pretty=format:\"* %s (%h)\" ${from}...${to}",
