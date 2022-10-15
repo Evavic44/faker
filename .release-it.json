@@ -4,7 +4,6 @@
   },
   "git": {
     "changelog": "git log --pretty=format:\"* %s (%h)\" ${from}...${to}",
-    "requireBranch": "next",
     "commit": true,
     "commitMessage": "chore(release): ${version}",
     "tag": true,
