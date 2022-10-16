@@ -59,9 +59,10 @@ export class DatatypeModule {
       // @ts-expect-error: access private member field
       this.faker._mersenne;
 
-    const randomNumber = Math.floor(
-      mersenne.next(max / precision + 1, min / precision)
-    );
+    const randomNumber = mersenne.next({
+      min: min / precision,
+      max: max / precision + 1,
+    });
 
     // Workaround problem in float point arithmetics for e.g. 6681493 / 0.01
     return randomNumber / (1 / precision);
